@@ -1,0 +1,28 @@
+{
+  "name": "loglevel-server-send",
+  "version": "0.0.1",
+  "description": "NPM plugin for JS logger loglevel which will forward all log messages to the server",
+  "main": "loglevel-serverSend.js",
+  "peerDependencies": {
+    "loglevel": "~1.2.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gpcboekema/loglevel-serverSend.git"
+  },
+  "keywords": [
+    "loglevel"
+  ],
+  "author": "Gijs Boekema <gijsboekema@gmail.com>",
+  "contributors": [
+    "Artem Yarulin <Artem.Yarulin@fessguid.com>"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gpcboekema/loglevel-serverSend/issues"
+  },
+  "homepage": "https://github.com/gpcboekema/loglevel-serverSend#readme"
+}

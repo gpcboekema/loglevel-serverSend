@@ -1,4 +1,4 @@
-Plugin for JS logger [loglevel](https://github.com/pimterry/loglevel) which will forward all log messages to the server
+NPM plugin for JS logger [loglevel](https://github.com/pimterry/loglevel) which will forward all log messages to the server
 
 # Features
 - Send is async and wouldn't slow down the application
@@ -7,6 +7,7 @@ Plugin for JS logger [loglevel](https://github.com/pimterry/loglevel) which will
 - You can specify prefix function which would dynamically add prefix for all log messages (app name, current user, etc.)
 
 # Installation
+- Using npm = `npm install loglevel-server-send`
 - Using bower - `bower install loglevel-server-send`
 - Manually - take [loglevel-serverSend.js](loglevel-serverSend.js)
 
@@ -24,10 +25,12 @@ Extend loglevel with new plugin which will send log information to the log-sever
 | \[options.prefix=<code>null</code>\] | <code>string</code> \| <code>function</code> | Prefix for all log messages. Either string or function wich should return string and accept log severity and message as parameters |
 | \[options.callOriginal=<code>false</code>\] | <code>Bool</code> | If set to true - original loglevel method for logging would be called |
 
-**Example**  
+**Example**
 ```js
+import loglevelServerSend from '../loglevel-serverSend.js';
+ 
 loglevelServerSend(log,{url:'https://example.com/app/log',prefix: function(logSev,message) {
-    return '[' + new Date().toISOString() + '] ' + logSev + ': ' + message + '\n'   
+    return '[' + new Date().toISOString() + '] ' + logSev + ': ' + message + '\n'
 }})
 ```
 

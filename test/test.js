@@ -12,35 +12,17 @@ loglevelServerSend(debuglog,{url:'https://example.com/app/log',prefix: function(
     return '[' + new Date().toISOString() + '] ' + logSev + ': ' + message + '\n'
 }, callOriginal: true});
 
-
 describe('#logelevelServerSend', function() {
 
     let mock;
 
-    it('should not be 42', function() {
-        this.req = sinon.useFakeXMLHttpRequest();
-        this.requests = [];
-        this.req.onCreate = function(xhr) {
-            this.requests.push(xhr);
-        }.bind(this);
-
+    it('should log info', function() {
         mock = sinon.mock(console);
-
         mock.expects('info').withExactArgs('info').once();
-        mock.expects('warn').withExactArgs('warn').once();
 
         debuglog.info('info');
-        debuglog.warn("warn");
 
         mock.restore();
         mock.verify();
-        this.req.restore();
-    });
-
-    it('should be 43', function() {
-        var answer = 43;
-
-        // AssertionError: expected 43 to equal 42.
-        expect(answer).to.equal(43);
     });
 });
